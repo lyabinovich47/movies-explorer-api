@@ -46,7 +46,15 @@ const updateProfile = (req, res, next) => {
         next(new NotFoundError('Пользователь не найден'));
       }
     })
-    .catch(next);
+    .catch((err) => {
+      if (err.code === 11000) {
+        next(new ConflictError('Данный email уже зарегистрирован'));
+      } else if (err.name === 'ValidationError') {
+        next(new BadRequestError('При создании пользователя переданы некорректные данные'));
+      } else {
+        next(err);
+      }
+    });
 };
 
 const login = (req, res, next) => {

@@ -57,7 +57,7 @@ const deleteMovie = (req, res, next) => {
 };
 
 const getSavedMovies = (req, res, next) => {
-  Movie.find(req.params.movieSavedId)
+  Movie.find({ owner: req.user._id })
     .then((movies) => res.status(RES_OK).send(movies))
     .catch(next);
 };
