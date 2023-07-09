@@ -1,6 +1,6 @@
 ### Бэкенд дипломной работы на курсе веб-разработки Яндекс Практикум.
 
-Адрес домена - api.lyabinav.nomoredomains.work
+Адрес домена - [https://api.lyabinav.nomoredomains.work]
 
 IP-адрес -  158.160.37.227
 
